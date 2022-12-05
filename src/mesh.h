@@ -11,14 +11,8 @@
 #include <string>
 #include <vector>
 
-#ifdef MESH_HIGH_PRECISION
-using ScalarType = double;
-#else
-using ScalarType = float;
-#endif
-
-using Vector2 = Eigen::Matrix<ScalarType, 2, 1, 0, 2, 1>;
-using Vector3 = Eigen::Matrix<ScalarType, 3, 1, 0, 3, 1>;
+using Vector2 = Eigen::Matrix<float, 2, 1, 0, 2, 1>;
+using Vector3 = Eigen::Matrix<float, 3, 1, 0, 3, 1>;
 
 struct Vertex
 {
