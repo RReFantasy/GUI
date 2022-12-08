@@ -9,17 +9,20 @@ add_definitions(-DGUI_SOURCE_DIR="${PROJECT_SOURCE_DIR}")
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR}/install)
 
+# depend
+set(GLM_INCLUDE_DIR "${PROJECT_SOURCE_DIR}/third_party/GLM")
+set(EIGEN_INCLUDE_DIR "${PROJECT_SOURCE_DIR}/third_party/eigen-3.4.0")
+
 # OpenGL
 find_package(OpenGL REQUIRED)
 include_directories( ${OPENGL_INCLUDE_DIRS} )
 link_libraries(${OPENGL_LIBRARIES})
 
-find_package(Eigen3 REQUIRED)
-include_directories(${EIGEN3_INCLUDE_DIR})
 
 include_directories(${PROJECT_SOURCE_DIR}/src)
 include_directories(${PROJECT_SOURCE_DIR}/src/dear_imgui)
-include_directories(${PROJECT_SOURCE_DIR}/third_party/GLM)
+include_directories(${GLM_INCLUDE_DIR})
+include_directories(${EIGEN_INCLUDE_DIR})
 
 
 IF (WIN32)
@@ -30,13 +33,6 @@ IF (WIN32)
 	# glfw eigen 
 	
 ELSEIF (APPLE)
-    # GLFW
-    #include_directories("/opt/homebrew/Cellar/glfw/3.3.8/include")
-    #link_directories("/opt/homebrew/Cellar/glfw/3.3.8/lib")
-    #include_directories("/usr/local/Cellar/glfw/3.3.8/include")
-    #link_directories("/usr/local/Cellar/glfw/3.3.8/lib")
-    #link_libraries(glfw)
-
     include(FetchContent)
     FetchContent_Declare(GLFW
             GIT_REPOSITORY    https://github.com/glfw/glfw.git
