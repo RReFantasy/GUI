@@ -45,5 +45,3 @@ build/
 clion_build/
 install/
 .cache/
-
-third_party/nanogui/
