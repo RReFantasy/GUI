@@ -37,24 +37,10 @@ IF (WIN32)
 	SET(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
 	SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
 	link_directories(${PROJECT_BINARY_DIR}/lib)
-    # please use vcpkg to integrate install 
-
-ELSEIF (APPLE)
-
-ELSEIF (UNIX)
-    #include_directories("/usr/include/")
-	#include_directories("/usr/local/include/")
-    #link_directories("/usr/lib")
-    #link_directories("/usr/local/lib")
-    #link_directories("/usr/lib64")
-    #link_directories("/usr/lib/x86_64-linux-gnu/")
-    #link_libraries(${OPENGL_LIBRARIES} ${GLSLCOOKBOOK_LIBS})
 ENDIF ()
 
 # 项目源码
 add_subdirectory(src)
-
-
 add_executable(gui_test main.cpp)
 target_link_libraries(gui_test gui)
 
