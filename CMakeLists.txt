@@ -31,10 +31,18 @@ IF (WIN32)
 	
 ELSEIF (APPLE)
     # GLFW
-    include_directories("/opt/homebrew/Cellar/glfw/3.3.8/include")
-    link_directories("/opt/homebrew/Cellar/glfw/3.3.8/lib")
-    include_directories("/usr/local/Cellar/glfw/3.3.8/include")
-    link_directories("/usr/local/Cellar/glfw/3.3.8/lib")
+    #include_directories("/opt/homebrew/Cellar/glfw/3.3.8/include")
+    #link_directories("/opt/homebrew/Cellar/glfw/3.3.8/lib")
+    #include_directories("/usr/local/Cellar/glfw/3.3.8/include")
+    #link_directories("/usr/local/Cellar/glfw/3.3.8/lib")
+    #link_libraries(glfw)
+
+    include(FetchContent)
+    FetchContent_Declare(GLFW
+            GIT_REPOSITORY    https://github.com/glfw/glfw.git
+            GIT_TAG           7482de6071d21db77a7236155da44c172a7f6c9e
+            )
+    FetchContent_MakeAvailable(GLFW)
     link_libraries(glfw)
 
     #GLEW
