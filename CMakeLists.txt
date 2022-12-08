@@ -10,8 +10,8 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR}/install)
 
 # depend
-set(GLM_INCLUDE_DIR "${PROJECT_SOURCE_DIR}/third_party/GLM")
-set(EIGEN_INCLUDE_DIR "${PROJECT_SOURCE_DIR}/third_party/eigen-3.4.0")
+set(GLM_INCLUDE_DIR "${PROJECT_SOURCE_DIR}/third_party/GLM/")
+set(EIGEN_INCLUDE_DIR "${PROJECT_SOURCE_DIR}/third_party/eigen-3.4.0/")
 
 # OpenGL
 find_package(OpenGL REQUIRED)
