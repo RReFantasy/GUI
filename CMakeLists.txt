@@ -7,7 +7,7 @@ ADD_DEFINITIONS(-D_UNICODE)
 add_definitions(-DGUI_SOURCE_DIR="${PROJECT_SOURCE_DIR}")
 
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR}/install)
+set(CMAKE_DL_LIBS ON)
 
 # OpenGL
 find_package(OpenGL REQUIRED)
@@ -19,6 +19,10 @@ set(GLM_INCLUDE_DIR "${PROJECT_SOURCE_DIR}/third_party/GLM/")
 set(EIGEN_INCLUDE_DIR "${PROJECT_SOURCE_DIR}/third_party/eigen-3.4.0/")
 
 # GLFW
+set(GLFW_BUILD_EXAMPLES OFF)
+set(GLFW_BUILD_TESTS OFF)
+set(GLFW_BUILD_DOCS OFF)
+set(GLFW_INSTALL OFF)
 include(FetchContent)
 FetchContent_Declare(GLFW
         GIT_REPOSITORY    https://github.com/glfw/glfw.git
@@ -43,6 +47,3 @@ ENDIF ()
 add_subdirectory(src)
 add_executable(gui_test main.cpp)
 target_link_libraries(gui_test gui)
-
-
-

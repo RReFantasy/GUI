@@ -1,13 +1,5 @@
 #include "gui_base.h"
 
-
-
-
-//#include "dear_imgui/backends/imgui_impl_glfw.h"
-//#include "dear_imgui/backends/imgui_impl_opengl3.h"
-//#include "dear_imgui/backends/imgui_impl_opengl3_loader.h"
-//#include "dear_imgui/imgui.h"
-
 int GUIBase::InitOpenGL()
 {
     /* 初始化 GLFW */
@@ -17,7 +9,7 @@ int GUIBase::InitOpenGL()
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-    glfwWindowHint(GLFW_SAMPLES, 4);
+    glfwWindowHint(GLFW_SAMPLES, 8);
 #ifdef __APPLE__
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 #endif
@@ -50,8 +42,6 @@ int GUIBase::InitOpenGL()
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_MULTISAMPLE);
     glEnable(GL_TEXTURE_2D);
-
-
 
     return 0;
 }
