@@ -54,6 +54,11 @@ class Mesh
   protected:
     unsigned int VAO = 0, VBO = 0, EBO = 0;
     unsigned int _texture = 0;
+
+    // 深度缓冲
+    unsigned int depthMapFBO;  // 帧缓冲
+    unsigned int depthMap;
+	
 };
 
 #endif // GUI_MESH_H

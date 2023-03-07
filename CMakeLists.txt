@@ -46,4 +46,6 @@ ENDIF ()
 # 项目源码
 add_subdirectory(src)
 add_executable(gui_test main.cpp)
+add_executable(shadowmap shadowmap.cpp)
 target_link_libraries(gui_test gui)
+target_link_libraries(shadowmap gui)

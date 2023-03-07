@@ -12,6 +12,7 @@ class GLSLShader
 public:
   GLSLShader() { BuildInShader(); };
   void BuildInShader();
+  void BuildInPickShader();
 
   unsigned int GetShaderID() const;
 

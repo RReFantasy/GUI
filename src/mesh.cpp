@@ -65,8 +65,8 @@ bool Mesh::GenGLBuffers()
 
 void Mesh::Draw(unsigned int shader_program)
 {
-    glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, _texture);
+    //glActiveTexture(GL_TEXTURE0);
+    //glBindTexture(GL_TEXTURE_2D, _texture);
 
     glUseProgram(shader_program);
     glBindVertexArray(VAO);
